@@ -122,11 +122,12 @@
 }
 
 .movie__production {
-  width: 85%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   margin-bottom: 4rem;
+  background-color: white;
 }
 
 .movie__productionComapany {

@@ -24,9 +24,8 @@ const Movie = () => {
       <div className="movie__intro">
         <img
           className="movie__backdrop"
-          src={`https://image.tmdb.org/t/p/original${
-            currentMovieDetail ? currentMovieDetail.backdrop_path : ""
-          }`}
+          src={`https://image.tmdb.org/t/p/original${currentMovieDetail ? currentMovieDetail.backdrop_path : ""
+            }`}
         />
       </div>
       <div className="movie__detail">
@@ -34,9 +33,8 @@ const Movie = () => {
           <div className="movie__posterBox">
             <img
               className="movie__poster"
-              src={`https://image.tmdb.org/t/p/original${
-                currentMovieDetail ? currentMovieDetail.poster_path : ""
-              }`}
+              src={`https://image.tmdb.org/t/p/original${currentMovieDetail ? currentMovieDetail.poster_path : ""
+                }`}
             />
           </div>
         </div>
@@ -68,12 +66,12 @@ const Movie = () => {
             <div className="movie__genres">
               {currentMovieDetail && currentMovieDetail.genres
                 ? currentMovieDetail.genres.map((genre) => (
-                    <>
-                      <span className="movie__genre" id={genre.id}>
-                        {genre.name}
-                      </span>
-                    </>
-                  ))
+                  <>
+                    <span className="movie__genre" id={genre.id}>
+                      {genre.name}
+                    </span>
+                  </>
+                ))
                 : ""}
             </div>
           </div>
@@ -100,7 +98,7 @@ const Movie = () => {
         )}
         {currentMovieDetail && currentMovieDetail.imdb_id && (
           <a
-            href={"https://www.imdb.com/title/" + currentMovieDetail.imdb_id}
+            href={`https://www.imdb.com/title/${currentMovieDetail.imdb_id}`}
             target="_blank"
             style={{ textDecoration: "none" }}
           >
@@ -118,21 +116,20 @@ const Movie = () => {
           currentMovieDetail.production_companies &&
           currentMovieDetail.production_companies.map((company) => (
             <>
+              {console.log(company)}
               {company.logo_path && (
-                <span className="productionCompanyImage">
+                <span span className="productionCompanyImage">
                   <img
                     className="movie__productionComapany"
-                    src={
-                      "https://image.tmdb.org/t/p/original" + company.logo_path
-                    }
+                    src={`https://image.tmdb.org/t/p/original${company.logo_path}`}
                   />
                   <span>{company.name}</span>
-                </span>
+                </span >
               )}
             </>
           ))}
       </div>
-    </div>
+    </div >
   );
 };
 export default Movie;
